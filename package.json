@@ -1,0 +1,28 @@
+{
+	"name": "id-provider",
+	"version": "0.0.1",
+	"description": "Id Provider",
+	"scripts": {
+		"postinstall": "cd app && npm install && cat ../POST_NPM_INSTALL.md",
+		"lint": "./node_modules/.bin/eslint .",
+		"prestart": "npm run lint",
+		"start:watch": "nodemon --exec npm start",
+		"start:production": "env TZ='UTC' node server.js",
+		"start": "env TZ='UTC' node server.js"
+	},
+	"dependencies": {
+		"bluebird": "^3.5.0"
+	},
+	"devDependencies": {
+		"eslint": "^3.19.0",
+		"eslint-config-airbnb-base": "^11.1.3",
+		"eslint-config-standard": "^10.2.1",
+		"eslint-plugin-import": "^2.2.0",
+		"eslint-plugin-node": "^4.2.2",
+		"eslint-plugin-promise": "^3.5.0",
+		"eslint-plugin-standard": "^3.0.1"
+	},
+	"engines": {
+		"node": "8.0.0"
+	}
+}
