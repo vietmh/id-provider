@@ -1,6 +1,6 @@
-const debug = require('debug')('nomadary:app:service:db:findById');
+const debug = require('debug')('nomadary:app:service:db:insertGenId');
 
-module.exports = function initFindById(db) {
+module.exports = function initInsertGenId(db) {
   /**
    * Find record in collection by id
    * @async
@@ -12,6 +12,6 @@ module.exports = function initFindById(db) {
    */
   return async (dbCollection, id) => {
     debug(`running with dbCollection: ${dbCollection}, id: ${id}`);
-    return db.collection(dbCollection).findOne({ genId: id });
+    return db.collection(dbCollection).insert({ genId: id });
   };
 };

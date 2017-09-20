@@ -1,7 +1,7 @@
 const Promise = require('bluebird');
 const { MongoClient } = require('mongodb');
 
-let nomadaryDb = null;
+let idsDb = null;
 
 const onConnectionClosed = function onConnectionClosed() {
   console.log('DB connection closed.'); // eslint-disable-line no-console
@@ -18,8 +18,8 @@ const onConnectSuccess = async function onConnectSuccess(db) {
   db.on('close', onConnectionClosed);
   db.on('error', onDbError);
 
-  nomadaryDb = db;
-  return nomadaryDb;
+  idsDb = db;
+  return idsDb;
 };
 
 const onConnectFail = async function onConnectFail(err) {
@@ -44,7 +44,7 @@ module.exports.connect = async function connect(dbConfig) {
 };
 
 const closeDbOnAppTerminated = async function closeDbOnAppTerminated() {
-  await nomadaryDb.close();
+  await idsDb.close();
 
   // eslint-disable-next-line no-console
   console.log('DB connection closed on app termination');
@@ -56,4 +56,4 @@ process.on('SIGINT', closeDbOnAppTerminated)
   .on('SIGTERM', closeDbOnAppTerminated)
   .on('exit', closeDbOnAppTerminated);
 
-module.exports.getDbInstance = () => nomadaryDb;
+module.exports.getDbInstance = () => idsDb;

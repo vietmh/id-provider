@@ -1,6 +1,6 @@
 {
 	"database": {
-		"uri": "mongodb://127.0.0.1:27017/nomadary",
+		"uri": "mongodb://192.168.99.100:32768/ids",
 		"poolSize": 5,
 		"connectTimeoutMS": 30000,
 		"socketTimeoutMS": 30000

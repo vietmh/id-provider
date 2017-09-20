@@ -8,10 +8,11 @@
 		"prestart": "npm run lint",
 		"start:watch": "nodemon --exec npm start",
 		"start:production": "env TZ='UTC' node server.js",
-		"start": "env TZ='UTC' node server.js"
+		"start": "node server.js"
 	},
 	"dependencies": {
-		"bluebird": "^3.5.0"
+		"bluebird": "^3.5.0",
+		"node-gyp": "^3.6.2"
 	},
 	"devDependencies": {
 		"eslint": "^3.19.0",
