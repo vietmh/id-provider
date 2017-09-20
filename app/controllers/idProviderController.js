@@ -1,7 +1,8 @@
-const { buildUrl, search: searchRoutes } = require('../routes/definitions');
+// const { buildUrl, search: searchRoutes } = require('../routes/definitions');
 
 const initIdProviders = function initIdProvider(services) {
   return async (req, res) => {
+    console.log(res, services);
     // try {
     //   const userId = req.params.userId;
     //   const searchText = req.query.searchText || '';

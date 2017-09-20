@@ -1,4 +1,4 @@
-const initProvideId = require('provideId');
+const initProvideId = require('./provideId');
 
 module.exports = function init(dbServices) {
   return {

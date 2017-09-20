@@ -11,6 +11,7 @@ module.exports = function init(dbInstance) {
   console.log('Initialized services.');
 
   return {
+    common: commonServices,
     idProvider: idProviderServices,
   };
 };

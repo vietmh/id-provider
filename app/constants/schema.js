@@ -1,3 +1,7 @@
 const ID = {
-	dbCollection: 'ids',
+  dbCollection: 'ids',
+};
+
+module.exports = {
+  ID
 };

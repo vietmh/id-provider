@@ -7,7 +7,7 @@ module.exports = function init(middlewares, controllers) {
   router.use(auth);
 
   // Search APIs
-  const search = controllers.idProvider;
+  const idProvider = controllers.idProvider;
   router.get(definitions.idProvider.provideId, idProvider.provideId);
 
   return router;
