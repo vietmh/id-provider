@@ -1,4 +1,5 @@
 const debug = require('debug')('nomadary:app:service:db:insertGenId');
+const { ID } = require('../../constants/schema');
 
 module.exports = function initInsertGenId(db) {
   /**
@@ -10,8 +11,8 @@ module.exports = function initInsertGenId(db) {
    *
    * @return {Promise.<Object>} - Promise resolve found record object
    */
-  return async (dbCollection, id) => {
-    debug(`running with dbCollection: ${dbCollection}, id: ${id}`);
-    return db.collection(dbCollection).insert({ genId: id });
+  return async (requester, id) => {
+    debug(`running with dbCollection: ${ID.dbCollection}, id: ${id}`);
+    return db.collection(ID.dbCollection).insertOne({ req: requester, genId: id });
   };
 };

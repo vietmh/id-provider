@@ -1,4 +1,5 @@
 const debug = require('debug')('nomadary:app:service:db:findById');
+const { ID } = require('../../constants/schema');
 
 module.exports = function initFindById(db) {
   /**
@@ -10,8 +11,8 @@ module.exports = function initFindById(db) {
    *
    * @return {Promise.<Object>} - Promise resolve found record object
    */
-  return async (dbCollection, id) => {
-    debug(`running with dbCollection: ${dbCollection}, id: ${id}`);
-    return db.collection(dbCollection).findOne({ genId: id });
+  return async (id) => {
+    debug(`running with dbCollection: ${ID.dbCollection}, id: ${id}`);
+    return db.collection(ID.dbCollection).findOne({ genId: id });
   };
 };

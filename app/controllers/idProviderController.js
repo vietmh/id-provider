@@ -3,7 +3,8 @@
 const initIdProviders = function initIdProvider(services) {
   return async (req, res) => {
     try {
-      const id = await services.idProvider.provideId();
+      const requester = req.params.userId;
+      const id = await services.idProvider.provideId(requester);
 
       const json = {
         code: 200,
