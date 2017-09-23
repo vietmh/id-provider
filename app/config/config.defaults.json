@@ -1,6 +1,6 @@
 {
 	"database": {
-		"uri": "mongodb://192.168.99.100:32768/IdProvider",
+		"uri": "mongodb://192.168.99.100:32773/IdProvider",
 		"poolSize": 5,
 		"connectTimeoutMS": 30000,
 		"socketTimeoutMS": 30000
