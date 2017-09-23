@@ -2,7 +2,7 @@ const http = require('http');
 
 const initApp = require('./app').init;
 
-const port = process.env.PORT || '18080';
+const port = process.env.PORT || '8080';
 const host = process.env.HOST || '127.0.0.1';
 
 const startServer = async function startServer() {
