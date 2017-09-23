@@ -8,6 +8,6 @@
       "no-underscore-dangle": [2, { "allow": ["_id", "_next"] }],
       "comma-dangle": "off",
       "max-len": [2, { "code": 100, "ignoreComments": true }],
-      "linebreak-style": ["error", "windows"]
+      "linebreak-style": ["error", "unix"]
     }
 }
